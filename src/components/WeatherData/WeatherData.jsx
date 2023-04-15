@@ -30,6 +30,10 @@ const WeatherData = ({ weatherData, error }) => {
 							<div className='weather__data__date'>
 								{dateConvert(weatherData.dt)}
 							</div>
+							<div className='weather__data__city_name'>
+								<LocationOnOutlinedIcon />
+								{weatherData.name}, {weatherData.sys?.country}
+							</div>
 							<div className='weather__data_temp'>
 								<img
 									src={`https://openweathermap.org/img/wn/${weatherData.weather[0]?.icon}@2x.png`}
@@ -71,10 +75,6 @@ const WeatherData = ({ weatherData, error }) => {
 										{weatherData.main?.humidity}%
 									</p>
 								</div>
-							</div>
-							<div className='weather__data__city_name'>
-								<LocationOnOutlinedIcon />
-								{weatherData.name}, {weatherData.sys?.country}
 							</div>
 						</>
 					)}
